@@ -1,4 +1,4 @@
-const api_key=`d5764f780a55cd3aa7e38b2e3735af3b`;
+
 
 const loadTemp=city=>{
     const url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`;
@@ -6,9 +6,11 @@ const loadTemp=city=>{
 }
 
 const displayTemp=data=>{
+    // console.log(data);
     const temparature=document.getElementById('temparature');
     temparature.innerText=data.main.temp
-    
+    console.log(data.weather[0].main);
+    document.getElementById('description').innerText=data.weather[0].main;
 }
 
 
