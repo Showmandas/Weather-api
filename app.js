@@ -8,6 +8,14 @@ const loadTemp=city=>{
 const displayTemp=data=>{
     const temparature=document.getElementById('temparature');
     temparature.innerText=data.main.temp
+    
 }
 
-console.log(loadTemp('dhaka'));
+
+document.getElementById('btn-search').addEventListener('click',function(){
+    const search=document.getElementById('search-field').value;
+    document.getElementById('showCountry').innerText=search;
+    loadTemp(search);
+})
+
+loadTemp('dhaka');
